@@ -1,0 +1,56 @@
+/* =========================================================
+   TEMA SOJOB — cores principais do site
+   Carregue este ficheiro ANTES dos CSS das páginas, em TODAS:
+   <link rel="stylesheet" href="./styles/tema.css">
+   <link rel="stylesheet" href="./styles/style.css">
+   ========================================================= */
+
+:root {
+    /* ----- PALETA: vermelho, amarelo, verde, rosa ----- */
+    --vermelho:        #e63946;
+    --vermelho-escuro: #c1121f;
+    --amarelo:         #ffb703;
+    --amarelo-claro:   #ffd166;
+    --verde:           #2a9d4a;
+    --verde-claro:     #8ce99a;
+    --rosa:            #ff5d8f;
+    --rosa-claro:      #ffc2d4;
+
+    /* ----- FUNÇÕES ----- */
+    --cor-principal:        var(--vermelho);       /* ações principais */
+    --cor-principal-escura: var(--vermelho-escuro);
+    --cor-destaque:         var(--amarelo);        /* destaques, méritos */
+    --cor-sucesso:          var(--verde);          /* confirmações */
+    --cor-suave:            var(--rosa);           /* detalhes, links secundários */
+    --cor-suave-clara:      var(--rosa-claro);
+
+    /* ----- NEUTROS ----- */
+    --cor-texto:       #262626;
+    --cor-texto-suave: #6b6b6b;
+    --cor-fundo:       #fffaf5;
+    --cor-fundo-card:  #ffffff;
+    --cor-borda:       #f0e3d8;
+
+    /* ----- GRADIENTE DA MARCA ----- */
+    --gradiente-marca: linear-gradient(135deg, var(--vermelho), var(--rosa) 45%, var(--amarelo));
+
+    /* ----- SOMBRAS E RAIOS ----- */
+    --raio:   14px;
+    --sombra: 0 3px 10px rgba(230, 57, 70, .10);
+    --sombra-alta: 0 8px 24px rgba(230, 57, 70, .18);
+
+    /* ----- TIPOGRAFIA ----- */
+    --fonte: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--fonte);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+}
+
+/* Links e botões principais herdam a cor do tema */
+a { color: var(--cor-principal); }
+
+::selection { background: var(--amarelo-claro); }

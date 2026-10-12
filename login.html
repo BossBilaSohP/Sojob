@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta - SOJOB</title>
+  <link rel="stylesheet" href="styles/registo.css">
+
+
+<script src="scripts/auth.js"></script>
+
+
+</head>
+  <main class="pagina">
+    <div class="marca">
+      <img src="imagens/logo.png" alt="SOJOB" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-texto">SOJOB</span>
+    </div>
+
+    <h1>Crie a sua conta</h1>
+    <p class="vartitulo">Preencha os dados para começar</p>
+
+    <form id="formRegisto" novalidate>
+      <div class="campo">
+        <label for="nome">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+          Nome completo
+        </label>
+        <input type="text" id="nome" name="nome" autocomplete="name" placeholder="O seu nome e apelido" required>
+        <small class="erro" id="erro-nome"></small>
+      </div>
+
+      <div class="campo">
+        <label for="email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          E-mail
+        </label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="oseu@email.com" required>
+        <small class="erro" id="erro-email"></small>
+      </div>
+
+      <div class="campo">
+        <label for="telefone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          Telefone
+        </label>
+        <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="84 123 4567" required>
+        <small class="erro" id="erro-telefone"></small>
+      </div>
+
+      <div class="campo">
+        <label for="nascimento">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Data de nascimento
+        </label>
+        <input type="date" id="nascimento" name="nascimento" required>
+        <small class="erro" id="erro-nascimento"></small>
+      </div>
+
+      <div class="campo">
+        <label for="senha">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          Palavra-passe
+        </label>
+        <div class="senha-wrap">
+          <input type="password" id="senha" name="senha" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required>
+          <button type="button" class="ver" data-alvo="senha" aria-label="Mostrar palavra-passe">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><line class="risco" x1="4" y1="4" x2="20" y2="20"/></svg>
+          </button>
+        </div>
+        <div class="forca" aria-hidden="true"><span id="barraForca"></span></div>
+        <small class="dica" id="textoForca">Use letras maiúsculas, minúsculas, números e símbolos.</small>
+        <small class="erro" id="erro-senha"></small>
+      </div>
+
+      <div class="campo">
+        <label for="confirmar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          Confirmar palavra-passe
+        </label>
+        <div class="senha-wrap">
+          <input type="password" id="confirmar" name="confirmar" autocomplete="new-password" placeholder="Repita a palavra-passe" required>
+          <button type="button" class="ver" data-alvo="confirmar" aria-label="Mostrar confirmação">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><line class="risco" x1="4" y1="4" x2="20" y2="20"/></svg>
+          </button>
+        </div>
+        <small class="erro" id="erro-confirmar"></small>
+      </div>
+
+      <div class="campo">
+        <label class="check-label">
+          <input type="checkbox" id="termos" name="termos" required>
+          <span>Aceito os <a href="#">termos de uso</a> e a política de privacidade.</span>
+        </label>
+        <small class="erro" id="erro-termos"></small>
+      </div>
+
+      <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+
+      <button type="submit" class="botao" id="btnEnviar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6.5 7-6.5M18 8v6M15 11h6"/></svg>
+        <span id="textoBtn">Criar conta</span>
+      </button>
+    </form>
+
+    <div class="divisor"><span>ou</span></div>
+
+    <a href="login.html" class="botao-contorno">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 8l-4 4 4 4M6 12h10"/></svg>
+      Já tenho conta
+    </a>
+
+    <a href="index.html" class="voltar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      Voltar ao início
+    </a>
+  </main>
+
+  <script src="scripts/registo.js"></script>
+</body>
+</html>

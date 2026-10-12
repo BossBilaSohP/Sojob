@@ -1,0 +1,185 @@
+/* =========================================================
+   CSS DA PÁGINA perfil.html (estilo Instagram/Facebook)
+   Requer o tema.css carregado antes
+   ========================================================= */
+
+/* ---------- CABEÇALHO DO PERFIL ---------- */
+#perfil-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 16px;
+    background: var(--cor-fundo-card);
+    border-bottom: 1px solid var(--cor-borda);
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#perfil-foto { position: relative; flex-shrink: 0; }
+#perfil-foto img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--amarelo);
+    display: block;
+}
+
+/* Selo de verificado */
+.verificado {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: var(--verde);
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+}
+.verificado ion-icon { font-size: 16px; }
+
+#perfil-info { flex: 1; min-width: 220px; }
+
+#perfil-nome-linha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#perfil-nome-linha h1 { font-size: 20px; margin: 0; }
+
+.badge-verificacao {
+    color: var(--verde);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#perfil-user { color: var(--cor-texto-suave); font-size: 15px; }
+
+#perfil-profissao {
+    color: var(--cor-texto-suave);
+    margin: 4px 0 8px;
+    font-size: 15px;
+}
+#perfil-profissao ion-icon { color: var(--rosa); vertical-align: -2px; }
+
+/* Estatísticas estilo Instagram */
+#perfil-stats { display: flex; gap: 24px; margin: 8px 0; }
+#perfil-stats div { text-align: center; }
+#perfil-stats strong { display: block; font-size: 17px; }
+#perfil-stats span { color: var(--cor-texto-suave); font-size: 13px; }
+
+/* Avaliação em estrelas */
+#perfil-avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--amarelo);
+    font-size: 16px;
+}
+#perfil-avaliacao span { color: var(--cor-texto-suave); font-size: 14px; margin-left: 4px; }
+
+/* Botões de ação */
+#perfil-acoes { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+#perfil-acoes button,
+#perfil-acoes a {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    background: var(--rosa-claro);
+    color: var(--cor-texto);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+#perfil-acoes .btn-principal {
+    background: var(--cor-principal);
+    color: #fff;
+}
+
+/* ---------- MÉRITOS ---------- */
+#perfil-meritos {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    overflow-x: auto;
+    background: var(--cor-fundo-card);
+    border-bottom: 1px solid var(--cor-borda);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.merito { text-align: center; flex-shrink: 0; width: 76px; cursor: pointer; }
+.merito-icone {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--amarelo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 6px;
+    background: #fff8ec;
+    color: var(--amarelo);
+    font-size: 26px;
+    transition: transform .2s;
+}
+.merito:hover .merito-icone { transform: scale(1.1); }
+.merito span { font-size: 12px; color: var(--cor-texto-suave); }
+
+/* ---------- PORTFÓLIO ---------- */
+#perfil-portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 4px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.portfolio-item {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: var(--cor-borda);
+    cursor: pointer;
+}
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s;
+}
+.portfolio-item:hover img { transform: scale(1.05); }
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 38, 38, .5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    opacity: 0;
+    transition: opacity .2s;
+    font-size: 14px;
+}
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+.portfolio-overlay ion-icon { vertical-align: -2px; margin-right: 4px; }
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 480px) {
+    #perfil-header { gap: 16px; }
+    #perfil-foto img { width: 84px; height: 84px; }
+    #perfil-stats { gap: 16px; }
+}

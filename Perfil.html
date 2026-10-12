@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfil - SOJOB</title>
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+
+    <base target="_blank">
+</head>
+<body>
+
+    <header>
+        <nav id="nav-esq">
+            <div id="logo">
+                <img src="./imagens/logo.jpeg.jpg" alt="logo SOJOB">
+            </div>
+
+            <ul id="icone-menu">
+                <li id="menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+            </ul>
+
+            <!-- BARRA DE PESQUISA -->
+            <li id="caixa-pesquisa">
+                <ion-icon name="search-outline" id="icone-pesquisa"></ion-icon>
+                <input type="text" id="campo-pesquisa" placeholder="Pesquisar..." autocomplete="off">
+                <ul id="resultados-pesquisa"></ul>
+            </li>
+
+            <ul id="menu-principal">
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon> Home</a></li>
+                <li><a href="servicos.html"><ion-icon name="briefcase-outline"></ion-icon> Serviços</a></li>
+                <li><a href="perfil.html" class="ativo"><ion-icon name="person-circle-outline"></ion-icon> Conta</a></li>
+                <li><a href="#"><ion-icon name="settings-outline"></ion-icon> Definições</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== CABEÇALHO DO PERFIL (estilo Instagram/Facebook) ===== -->
+        <section id="perfil-header">
+            <!-- Fotografia com selo de verificado -->
+            <div id="perfil-foto">
+                <img src="./imagens/avatar.png" alt="Foto de perfil">
+                <span class="verificado" title="Perfil verificado">
+                    <ion-icon name="checkmark"></ion-icon>
+                </span>
+            </div>
+
+            <div id="perfil-info">
+                <div id="perfil-nome-linha">
+                    <h1>Nome do Artista</h1>
+                    <!-- Selo de verificação ao lado do nome -->
+                    <span class="badge-verificacao" title="Verificado">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </span>
+                    <span id="perfil-user">@utilizador</span>
+                </div>
+
+                <!-- Profissão -->
+                <p id="perfil-profissao">
+                    <ion-icon name="color-palette-outline"></ion-icon>
+                    Artista &bull; Pintura &amp; Design
+                </p>
+
+                <!-- Estatísticas estilo Instagram -->
+                <div id="perfil-stats">
+                    <div><strong>128</strong><span>Trabalhos</span></div>
+                    <div><strong>4.9</strong><span>Avaliação</span></div>
+                    <div><strong>2.3k</strong><span>Seguidores</span></div>
+                </div>
+
+                <!-- Avaliação -->
+                <div id="perfil-avaliacao">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                    <span>(4.9 &bull; 86 avaliações)</span>
+                </div>
+
+                <!-- Botões -->
+                <div id="perfil-acoes">
+                    <a href="servicos.html" class="btn-principal">
+                        <ion-icon name="briefcase-outline"></ion-icon> Pedir serviço
+                    </a>
+                    <button type="button">
+                        <ion-icon name="chatbubble-outline"></ion-icon> Mensagem
+                    </button>
+                    <button type="button">
+                        <ion-icon name="person-add-outline"></ion-icon> Seguir
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MÉRITOS ===== -->
+        <section id="perfil-meritos">
+            <div class="merito">
+                <div class="merito-icone"><ion-icon name="trophy-outline"></ion-icon></div>
+                <span>Top Artista</span>
+            </div>
+            <div class="merito">
+                <div class="merito-icone"><ion-icon name="ribbon-outline"></ion-icon></div>
+                <span>100+ Trabalhos</span>
+            </div>
+            <div class="merito">
+                <div class="merito-icone"><ion-icon name="time-outline"></ion-icon></div>
+                <span>Pontual</span>
+            </div>
+            <div class="merito">
+                <div class="merito-icone"><ion-icon name="hand-left-outline"></ion-icon></div>
+                <span>Recomendado</span>
+            </div>
+            <div class="merito">
+                <div class="merito-icone"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+                <span>Verificado</span>
+            </div>
+        </section>
+
+        <!-- ===== PORTFÓLIO DO UTILIZADOR ===== -->
+        <section id="perfil-portfolio">
+            <div class="portfolio-item">
+                <img src="./imagens/portfolio/obra1.jpg" alt="Obra 1">
+                <div class="portfolio-overlay">
+                    <span><ion-icon name="heart"></ion-icon> 245</span>
+                    <span><ion-icon name="chatbubble"></ion-icon> 18</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./imagens/portfolio/obra2.jpg" alt="Obra 2">
+                <div class="portfolio-overlay">
+                    <span><ion-icon name="heart"></ion-icon> 189</span>
+                    <span><ion-icon name="chatbubble"></ion-icon> 12</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./imagens/portfolio/obra3.jpg" alt="Obra 3">
+                <div class="portfolio-overlay">
+                    <span><ion-icon name="heart"></ion-icon> 312</span>
+                    <span><ion-icon name="chatbubble"></ion-icon> 27</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./imagens/portfolio/obra4.jpg" alt="Obra 4">
+                <div class="portfolio-overlay">
+                    <span><ion-icon name="heart"></ion-icon> 98</span>
+                    <span><ion-icon name="chatbubble"></ion-icon> 6</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./imagens/portfolio/obra5.jpg" alt="Obra 5">
+                <div class="portfolio-overlay">
+                    <span><ion-icon name="heart"></ion-icon> 156</span>
+                    <span><ion-icon name="chatbubble"></ion-icon> 9</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./imagens/portfolio/obra6.jpg" alt="Obra 6">
+                <div class="portfolio-overlay">
+                    <span><ion-icon name="heart"></ion-icon> 421</span>
+                    <span><ion-icon name="chatbubble"></ion-icon> 33</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== BARRA INFERIOR ESTILO APP ===== -->
+    <nav id="barra-app">
+        <a href="index.html" class="item-app">
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Início</span>
+        </a>
+
+        <!-- CÂMERA: abre a câmera do telemóvel -->
+        <button class="item-app" id="btn-camera">
+            <ion-icon name="camera-outline"></ion-icon>
+            <span>Câmera</span>
+        </button>
+
+        <input type="file" id="input-camera" accept="image/*,video/*" capture="environment" hidden>
+
+        <!-- BOTÃO + : abre menu de ações -->
+        <button class="item-app btn-mais" id="btn-mais">
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+
+        <a href="perfil.html" class="item-app ativo">
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Perfil</span>
+        </a>
+
+        <!-- VOLTAR AO TOPO -->
+        <button class="item-app" id="btn-topo">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+            <span>Topo</span>
+        </button>
+    </nav>
+
+    <!-- Menu que abre com o botão + -->
+    <div id="menu-acoes">
+        <a href="servicos.html"><ion-icon name="briefcase-outline"></ion-icon> Pedir Serviço</a>
+        <a href="#" id="acao-camera"><ion-icon name="camera-outline"></ion-icon> Publicar Foto</a>
+        <a href="registo.html"><ion-icon name="person-add-outline"></ion-icon> Criar Conta</a>
+    </div>
+    <div id="fundo-menu"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/in-view.min.js"></script>
+
+    <!-- Ícones -->
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/unicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Script local -->
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

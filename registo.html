@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta</title>
+  <link rel="stylesheet" href="estilo.css">
+  
+</head>
+<body>
+  <main class="cartao">
+    <header>
+      <h1>Criar conta</h1>
+      <p class="subtitulo">Preencha os dados abaixo para se registar.</p>
+    </header>
+
+    <form id="formRegistro" novalidate>
+      <div class="campo">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Ex.: Maria Santos" required>
+        <small class="erro" id="erro-nome"></small>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+        <small class="erro" id="erro-email"></small>
+      </div>
+
+      <div class="linha">
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="84 123 4567" required>
+          <small class="erro" id="erro-telefone"></small>
+        </div>
+        <div class="campo">
+          <label for="nascimento">Data de nascimento</label>
+          <input type="date" id="nascimento" name="nascimento" required>
+          <small class="erro" id="erro-nascimento"></small>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <div class="senha-wrap">
+          <input type="password" id="senha" name="senha" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required>
+          <button type="button" class="ver" data-alvo="senha" aria-label="Mostrar senha">Mostrar</button>
+        </div>
+        <div class="forca" aria-hidden="true">
+          <span id="barraForca"></span>
+        </div>
+        <small class="dica" id="textoForca">Use letras maiúsculas, minúsculas, números e símbolos.</small>
+        <small class="erro" id="erro-senha"></small>
+      </div>
+
+      <div class="campo">
+        <label for="confirmar">Confirmar senha</label>
+        <div class="senha-wrap">
+          <input type="password" id="confirmar" name="confirmar" autocomplete="new-password" placeholder="Repita a senha" required>
+          <button type="button" class="ver" data-alvo="confirmar" aria-label="Mostrar confirmação">Mostrar</button>
+        </div>
+        <small class="erro" id="erro-confirmar"></small>
+      </div>
+
+      <div class="campo check">
+        <label class="check-label">
+          <input type="checkbox" id="termos" name="termos" required>
+          <span>Aceito os <a href="#" onclick="return false">termos de uso</a> e a política de privacidade.</span>
+        </label>
+        <small class="erro" id="erro-termos"></small>
+      </div>
+
+      <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+
+      <button type="submit" class="botao" id="btnEnviar">Registar</button>
+    </form>
+
+    <footer>
+      <p>Já tem conta? <a href="#" onclick=mostrarErrose">Entrar</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

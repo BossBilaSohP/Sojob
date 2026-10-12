@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Serviços - SOJOB</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="stylesheet" href="./styles/servicos.css">
+</head>
+
+<body>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header>
+        <nav id="nav-esq">
+
+            <!-- LOGO -->
+            <div id="logo">
+                <img src="./imagens/logo.jpeg.jpg" alt="logo SOJOB">
+            </div>
+
+            <!-- ÍCONE DO MENU -->
+            <ul id="icone-menu">
+                <li id="menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+            </ul>
+
+            <!-- BARRA DE PESQUISA -->
+            <li id="caixa-pesquisa">
+                <ion-icon
+                    name="search-outline"
+                    id="icone-pesquisa"
+                ></ion-icon>
+
+                <input
+                    type="text"
+                    id="campo-pesquisa"
+                    placeholder="Pesquisar serviço..."
+                    autocomplete="off"
+                >
+
+                <ul id="resultados-pesquisa"></ul>
+            </li>
+
+            <!-- MENU PRINCIPAL -->
+            <ul id="menu-principal">
+                <li>
+                    <a href="index.html">
+                        <ion-icon name="home-outline"></ion-icon>
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="servicos.html" class="ativo">
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                        Serviços
+                    </a>
+                </li>
+
+                <li>
+                    <a href="perfil.html">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        Conta
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <ion-icon name="settings-outline"></ion-icon>
+                        Definições
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- TÍTULO DA PÁGINA -->
+        <section id="cabecalho-servicos">
+            <h1>
+                <ion-icon name="briefcase-outline"></ion-icon>
+                Serviços disponíveis
+            </h1>
+
+            <p>
+                Escolha o serviço que precisa e peça já um profissional.
+            </p>
+        </section>
+
+        <!-- ===== LISTA DE SERVIÇOS ===== -->
+        <section id="lista-servicos">
+
+            <!-- LIMPEZA -->
+            <article class="card-servico">
+                <div class="icone-servico">
+                    <ion-icon name="sparkles-outline"></ion-icon>
+                </div>
+
+                <h2>Limpeza</h2>
+                <p>Limpeza doméstica, escritórios e pós-obra.</p>
+
+                <a href="#pedido" class="btn-pedir">
+                    Pedir serviço
+                </a>
+            </article>
+
+            <!-- CONSTRUÇÃO -->
+            <article class="card-servico">
+                <div class="icone-servico">
+                    <ion-icon name="construct-outline"></ion-icon>
+                </div>
+
+                <h2>Construção</h2>
+                <p>Reparos, remodelações e pequenas obras.</p>
+
+                <a href="#pedido" class="btn-pedir">
+                    Pedir serviço
+                </a>
+            </article>
+
+            <!-- ELETRICIDADE -->
+            <article class="card-servico">
+                <div class="icone-servico">
+                    <ion-icon name="flash-outline"></ion-icon>
+                </div>
+
+                <h2>Eletricidade</h2>
+                <p>Instalações, reparações e manutenção elétrica.</p>
+
+                <a href="#pedido" class="btn-pedir">
+                    Pedir serviço
+                </a>
+            </article>
+
+            <!-- ENCANAMENTO -->
+            <article class="card-servico">
+                <div class="icone-servico">
+                    <ion-icon name="water-outline"></ion-icon>
+                </div>
+
+                <h2>Encanamento</h2>
+                <p>Fugas, canos, torneiras e esgotos.</p>
+
+                <a href="#pedido" class="btn-pedir">
+                    Pedir serviço
+                </a>
+            </article>
+
+            <!-- PINTURA -->
+            <article class="card-servico">
+                <div class="icone-servico">
+                    <ion-icon name="brush-outline"></ion-icon>
+                </div>
+
+                <h2>Pintura</h2>
+                <p>
+                    Pintura interior e exterior, com acabamento profissional.
+                </p>
+
+                <a href="#pedido" class="btn-pedir">
+                    Pedir serviço
+                </a>
+            </article>
+
+            <!-- JARDINAGEM -->
+            <article class="card-servico">
+                <div class="icone-servico">
+                    <ion-icon name="leaf-outline"></ion-icon>
+                </div>
+
+                <h2>Jardinagem</h2>
+                <p>Corte de relva, poda e manutenção de jardins.</p>
+
+                <a href="#pedido" class="btn-pedir">
+                    Pedir serviço
+                </a>
+            </article>
+
+        </section>
+
+        <!-- ===== FORMULÁRIO DE PEDIDO ===== -->
+        <section id="pedido">
+
+            <h2>
+                <ion-icon name="clipboard-outline"></ion-icon>
+                Pedir um serviço
+            </h2>
+
+            <form id="form-pedido">
+
+                <!-- NOME -->
+                <div class="campo">
+                    <label for="nome">Nome</label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="O seu nome"
+                        required
+                    >
+                </div>
+
+                <!-- TELEFONE -->
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        placeholder="O seu contacto"
+                        required
+                    >
+                </div>
+
+                <!-- TIPO DE SERVIÇO -->
+                <div class="campo">
+                    <label for="tipo-servico">Serviço</label>
+
+                    <select id="tipo-servico" required>
+                        <option value="">Escolha um serviço...</option>
+                        <option>Limpeza</option>
+                        <option>Construção</option>
+                        <option>Eletricidade</option>
+                        <option>Encanamento</option>
+                        <option>Pintura</option>
+                        <option>Jardinagem</option>
+                    </select>
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+
+                    <textarea
+                        id="descricao"
+                        rows="4"
+                        placeholder="Descreva o que precisa..."
+                    ></textarea>
+                </div>
+
+                <!-- BOTÃO ENVIAR -->
+                <button type="submit" class="btn-enviar">
+                    <ion-icon name="send-outline"></ion-icon>
+                    Enviar pedido
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ===== BARRA INFERIOR ESTILO APP ===== -->
+    <nav id="barra-app">
+
+        <!-- INÍCIO -->
+        <a href="index.html" class="item-app">
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Início</span>
+        </a>
+
+        <!-- CÂMERA -->
+        <button type="button" class="item-app" id="btn-camera">
+            <ion-icon name="camera-outline"></ion-icon>
+            <span>Câmera</span>
+        </button>
+
+        <!-- INPUT DA CÂMERA -->
+        <input
+            type="file"
+            id="input-camera"
+            accept="image/*,video/*"
+            capture="environment"
+            hidden
+        >
+
+        <!-- BOTÃO MAIS -->
+        <button
+            type="button"
+            class="item-app btn-mais"
+            id="btn-mais"
+        >
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+
+        <!-- PERFIL -->
+        <a href="perfil.html" class="item-app">
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Perfil</span>
+        </a>
+
+        <!-- VOLTAR AO TOPO -->
+        <button type="button" class="item-app" id="btn-topo">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+            <span>Topo</span>
+        </button>
+
+    </nav>
+
+    <!-- ===== MENU DE AÇÕES ===== -->
+    <div id="menu-acoes">
+
+        <a href="servicos.html">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            Pedir Serviço
+        </a>
+
+        <a href="#" id="acao-camera">
+            <ion-icon name="camera-outline"></ion-icon>
+            Publicar Foto
+        </a>
+
+        <a href="registo.html">
+            <ion-icon name="person-add-outline"></ion-icon>
+            Criar Conta
+        </a>
+
+    </div>
+
+    <!-- FUNDO DO MENU -->
+    <div id="fundo-menu"></div>
+
+    <!-- ===== BIBLIOTECAS JAVASCRIPT ===== -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/in-view.min.js"></script>
+
+    <!-- Ícones Unicons -->
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/unicons.js"></script>
+
+    <!-- Ícones Ionicons -->
+    <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <!-- ===== SCRIPTS DO SOJOB ===== -->
+
+    <!-- Script principal -->
+    <script src="./scripts/index.js"></script>
+
+    <!-- Script da página de serviços -->
+    <script src="./scripts/servicos.js"></script>
+
+</body>
+</html>

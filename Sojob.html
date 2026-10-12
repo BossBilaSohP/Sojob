@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sojob</title>
+  <meta name="description" content="A Sojob junta profissionais, artistas e clientes em Moçambique. Inscreve-te no pré-lançamento gratuito.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./styles/Sojob.css">
+  <style>
+    /* Apenas para os links de navegação */
+    .top { flex-wrap: wrap; gap: 10px; }
+    .logo a { color: inherit; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { color: inherit; text-decoration: none; font-size: 14px; font-weight: 600; padding: 6px 4px; }
+    .nav-links a:hover, .nav-links a.ativo { text-decoration: underline; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="logo"><a href="./index.html" aria-label="Sojob início">so<i>job</i></a></div>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./servicos.html">Serviços</a></li>
+          <li><a href="./Sojob.html" class="ativo">Sojob</a></li>
+          <li><a href="./Perfil.html">Perfil</a></li>
+          <li><a href="./registo.html">Registo</a></li>
+          <li><a href="./login.html">Entrar</a></li>
+        </ul>
+      </nav>
+      <span class="tag">Pré-lançamento</span>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="eyebrow">Serviços e artistas em Moçambique</div>
+        <h1>Encontra quem faz, <em>perto de ti.</em></h1>
+        <p class="lead">A Sojob junta profissionais, artistas e clientes num só lugar. Electricistas, fotógrafos, músicos, designers e muito mais. Inscreve-te agora e entra de graça.</p>
+        <div class="ctas">
+          <a class="btn primary" data-form="pro" href="#aviso">Sou profissional ou artista</a>
+          <a class="btn ghost" data-form="cliente" href="#aviso">Procuro um serviço</a>
+        </div>
+        <p class="note" id="aviso" role="status" aria-live="polite"></p>
+      </div>
+      <div class="capulana" aria-hidden="true"></div>
+
+      <section>
+        <div class="eyebrow">O que vais encontrar</div>
+        <h2>Do canalizador ao DJ para o casamento</h2>
+        <p class="sub">Cada profissional tem o seu perfil com área de trabalho, cidade e portefólio. Tu vês o trabalho e escolhes.</p>
+        <ul class="chips">
+          <li>Electricista</li>
+          <li>Canalizador</li>
+          <li>Pedreiro</li>
+          <li>Pintor</li>
+          <li>Alfaiate</li>
+          <li>Cabeleireira</li>
+          <li>Fotógrafo</li>
+          <li>Músico</li>
+          <li>DJ e MC</li>
+          <li>Designer</li>
+          <li>Artesão</li>
+          <li class="more">e muito mais</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="eyebrow">Como funciona</div>
+        <h2>Três passos, sem complicação</h2>
+        <ol class="steps">
+          <li>
+            <h3>Inscreve-te</h3>
+            <p>Preenche o formulário com o teu nome, WhatsApp e cidade. Leva um minuto.</p>
+          </li>
+          <li>
+            <h3>Monta o teu perfil</h3>
+            <p>Os profissionais mostram o que fazem. Os clientes dizem o que procuram.</p>
+          </li>
+          <li>
+            <h3>Combinem o serviço</h3>
+            <p>Cliente e profissional falam directamente e fecham o trabalho entre os dois.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <div class="eyebrow">Oferta de pré-lançamento</div>
+        <h2>Entra cedo e fica com as vantagens</h2>
+        <div class="offer">
+          <div class="card pro">
+            <h3>Profissionais e artistas</h3>
+            <ul>
+              <li>Perfil grátis durante o pré-lançamento</li>
+              <li>Selo de Membro Fundador</li>
+              <li>Destaque no lançamento oficial</li>
+              <li>Meses sem comissão para os primeiros inscritos</li>
+            </ul>
+            <a class="btn" data-form="pro" href="#aviso">Quero o meu perfil grátis</a>
+          </div>
+          <div class="card">
+            <h3>Clientes</h3>
+            <ul>
+              <li>Acesso livre, sem taxas</li>
+              <li>Profissionais da tua cidade e província</li>
+              <li>Ajuda a escolher quem entra primeiro na Sojob</li>
+            </ul>
+            <a class="btn clay" data-form="cliente" href="#aviso">Quero ser dos primeiros</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="close">
+        <div class="hero-lite">
+          <h2>Sê dos primeiros a entrar na Sojob.</h2>
+          <p class="sub flush">Quando abrirmos, avisamos pelo WhatsApp. Conta aos amigos que fazem um bom trabalho.</p>
+          <div class="ctas">
+            <a class="btn clay" data-form="pro" href="#aviso">Inscrever-me agora</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Sojob</span>
+      <span><a href="./index.html">Início</a> · <a href="./servicos.html">Serviços</a> · <a href="./registo.html">Registo</a> · <a href="./login.html">Entrar</a></span>
+      <span>Moçambique</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

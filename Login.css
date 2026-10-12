@@ -1,0 +1,262 @@
+/* =========================================================
+   CSS DA PÁGINA login.html
+   (cores vêm do tema.css — carregue o tema.css antes)
+   ========================================================= */
+
+#login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- PAINEL DO FORMULÁRIO ---------- */
+#login-painel-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px clamp(24px, 8vw, 96px);
+    background: var(--cor-fundo-card);
+}
+
+#login-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 36px;
+}
+#login-logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+#login-logo span {
+    font-size: 22px;
+    font-weight: 800;
+    background: var(--gradiente-marca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#login-painel-form h1 {
+    font-size: 26px;
+    margin: 0 0 6px;
+    color: var(--cor-texto);
+}
+.login-subtitulo {
+    color: var(--cor-texto-suave);
+    margin: 0 0 24px;
+    font-size: 15px;
+}
+
+/* Mensagens de erro / sucesso */
+#login-mensagem {
+    display: none;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+#login-mensagem.erro {
+    background: #fdeaea;
+    color: var(--vermelho-escuro);
+    border: 1px solid #f5c2c0;
+}
+#login-mensagem.sucesso {
+    background: #e6f9ee;
+    color: var(--verde);
+    border: 1px solid var(--verde-claro);
+}
+
+/* Campos */
+.campo-login { margin-bottom: 18px; }
+.campo-login label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin-bottom: 6px;
+}
+.campo-login label ion-icon { color: var(--cor-principal); }
+
+.campo-login input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--cor-texto);
+    background: #fff;
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color .2s, box-shadow .2s;
+}
+.campo-login input:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, .12);
+}
+.campo-login input.invalido {
+    border-color: var(--vermelho);
+    background: #fff7f7;
+}
+
+/* Campo de senha com olho */
+.campo-senha { position: relative; }
+.campo-senha input { padding-right: 46px; }
+#toggle-senha {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-texto-suave);
+    font-size: 20px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+}
+#toggle-senha:hover { color: var(--cor-principal); }
+
+/* Opções: lembrar + esqueci */
+.login-opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0 22px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-texto-suave);
+    cursor: pointer;
+}
+.lembrar input { accent-color: var(--cor-principal); width: 16px; height: 16px; }
+#esqueci-senha { color: var(--cor-suave); text-decoration: none; }
+#esqueci-senha:hover { text-decoration: underline; }
+
+/* Botão entrar */
+.btn-entrar {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    color: #fff;
+    background: var(--gradiente-marca);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform .15s, box-shadow .2s;
+}
+.btn-entrar:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-alta);
+}
+.btn-entrar:active { transform: translateY(0); }
+
+/* Separador "ou" */
+.login-separador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 26px 0;
+    color: var(--cor-texto-suave);
+    font-size: 13px;
+}
+.login-separador::before,
+.login-separador::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--cor-borda);
+}
+
+/* Botão criar conta */
+.btn-criar-conta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cor-principal);
+    background: #fff;
+    border: 2px solid var(--cor-principal);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+.btn-criar-conta:hover {
+    background: var(--cor-principal);
+    color: #fff;
+}
+
+.login-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+    text-decoration: none;
+}
+.login-voltar:hover { color: var(--cor-principal); }
+
+/* ---------- PAINEL DO BANNER ---------- */
+#login-painel-banner {
+    flex: 1;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(255, 183, 3, .55), transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(42, 157, 74, .55), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255, 93, 143, .5), transparent 50%),
+        var(--gradiente-marca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.banner-conteudo { color: #fff; max-width: 420px; text-align: center; }
+.banner-conteudo h2 {
+    font-size: clamp(26px, 3.2vw, 38px);
+    line-height: 1.25;
+    margin: 0 0 14px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+.banner-conteudo p {
+    font-size: 16px;
+    opacity: .95;
+    margin: 0 0 28px;
+}
+.banner-dots { display: flex; gap: 12px; justify-content: center; }
+.dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.dot-vermelho { background: var(--vermelho); }
+.dot-amarelo  { background: var(--amarelo); }
+.dot-verde    { background: var(--verde); }
+.dot-rosa     { background: var(--rosa); }
+
+/* ---------- MOBILE: esconde banner ---------- */
+@media (max-width: 820px) {
+    #login-painel-banner { display: none; }
+    #login-painel-form { padding: 32px 22px; }
+}

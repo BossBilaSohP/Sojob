@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0755c9">
+
+    <title>SOJOB | Serviços para todos</title>
+
+    <meta name="description"
+          content="SOJOB conecta profissionais, artistas e clientes num só lugar.">
+
+    <link rel="stylesheet" href="./styles/Style.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="stylesheet" href="./styles/Tema.css">
+
+    <script type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        /* ESTILOS ESSENCIAIS DA PÁGINA INICIAL */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f5fa;
+            color: #202938;
+            padding-bottom: 85px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #0755c9;
+            color: white;
+            box-shadow: 0 2px 10px #0002;
+        }
+
+        #nav-esq {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            flex-wrap: wrap;
+        }
+
+        #logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        #icone-menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        #menu {
+            cursor: pointer;
+            font-size: 28px;
+        }
+
+        #menu-principal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #menu-principal a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        #menu-principal a:hover,
+        #menu-principal a.ativo {
+            background: #ffffff25;
+        }
+
+        #caixa-pesquisa {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #333;
+            border-radius: 25px;
+            padding: 0 12px;
+            flex: 1;
+            min-width: 130px;
+            max-width: 380px;
+        }
+
+        #campo-pesquisa {
+            width: 100%;
+            min-width: 0;
+            border: none;
+            outline: none;
+            padding: 12px 0;
+            background: transparent;
+            font-size: 14px;
+        }
+
+        #resultados-pesquisa {
+            display: none;
+        }
+
+        main {
+            width: min(100% - 24px, 850px);
+            margin: 20px auto;
+        }
+
+        .boas-vindas {
+            background: linear-gradient(135deg, #0755c9, #087eaa);
+            color: white;
+            border-radius: 18px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+        }
+
+        .boas-vindas h1 {
+            margin-top: 0;
+            font-size: 25px;
+        }
+
+        .boas-vindas p {
+            line-height: 1.6;
+        }
+
+        .botao-principal {
+            display: inline-block;
+            background: #ffca28;
+            color: #172033;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 10px;
+        }
+
+        .titulo-secao {
+            font-size: 20px;
+            margin: 22px 0 12px;
+        }
+
+        .atalhos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .atalho {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 12px;
+            background: white;
+            color: #202938;
+            text-decoration: none;
+            border-radius: 13px;
+            box-shadow: 0 2px 8px #0000000a;
+        }
+
+        .atalho ion-icon {
+            font-size: 28px;
+            color: #0755c9;
+        }
+
+        .publicacao {
+            background: white;
+            padding: 17px;
+            margin-bottom: 14px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px #0000000a;
+        }
+
+        .publicacao h3 {
+            margin: 0 0 8px;
+        }
+
+        .publicacao p {
+            line-height: 1.6;
+        }
+
+        .publicacao img,
+        .publicacao video {
+            display: block;
+            width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-top: 12px;
+            background: #eef1f6;
+        }
+
+        .acoes-publicacao {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .acoes-publicacao button {
+            border: 0;
+            background: #edf3ff;
+            color: #0755c9;
+            padding: 10px 12px;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #barra-app {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 200;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 9px 2px;
+            background: white;
+            box-shadow: 0 -2px 12px #00000012;
+            box-sizing: border-box;
+        }
+
+        .item-app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: #566174;
+            text-decoration: none;
+            background: transparent;
+            border: 0;
+            font-size: 12px;
+            cursor: pointer;
+            padding: 5px;
+            min-width: 45px;
+        }
+
+        .item-app ion-icon {
+            font-size: 23px;
+        }
+
+        .item-app.ativo {
+            color: #0755c9;
+        }
+
+        .btn-mais ion-icon {
+            font-size: 36px;
+            color: #0755c9;
+        }
+
+        #menu-acoes {
+            display: none;
+            position: fixed;
+            bottom: 82px;
+            right: 15px;
+            z-index: 300;
+            width: 210px;
+            padding: 8px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px #0003;
+        }
+
+        #menu-acoes.aberto {
+            display: block;
+        }
+
+        #menu-acoes a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 10px;
+            color: #202938;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        #menu-acoes a:hover {
+            background: #edf3ff;
+        }
+
+        #fundo-menu {
+            display: none;
+        }
+
+        .mensagem-vazia {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            color: #667085;
+        }
+
+        @media (max-width: 600px) {
+            #nav-esq {
+                gap: 10px;
+                padding: 8px 10px;
+            }
+
+            #icone-menu {
+                display: block;
+                margin: 0;
+            }
+
+            #menu-principal {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                background: #0755c9;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #menu-principal.aberto {
+                display: flex;
+            }
+
+            #menu-principal a {
+                padding: 13px;
+            }
+
+            #logo img {
+                width: 38px;
+                height: 38px;
+            }
+
+            #caixa-pesquisa {
+                order: 3;
+                flex-basis: 100%;
+                max-width: none;
+            }
+
+            main {
+                width: calc(100% - 20px);
+                margin-top: 12px;
+            }
+
+            .boas-vindas {
+                padding: 20px 16px;
+            }
+
+            .boas-vindas h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav id="nav-esq" aria-label="Navegação principal">
+
+        <a id="logo" href="./index.html" aria-label="SOJOB início">
+            <img src="./imagens/logo.jpeg.jpg" alt="Logo SOJOB">
+        </a>
+
+        <button id="botao-menu" type="button"
+                aria-label="Abrir menu" aria-expanded="false"
+                style="background:transparent;border:0;color:white;font-size:26px;cursor:pointer">
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <div id="caixa-pesquisa">
+            <ion-icon name="search-outline" id="icone-pesquisa"></ion-icon>
+            <input type="search" id="campo-pesquisa"
+                   placeholder="Pesquisar serviços..."
+                   autocomplete="off">
+        </div>
+
+        <ul id="menu-principal">
+            <li>
+                <a href="./index.html" class="ativo">
+                    <ion-icon name="home-outline"></ion-icon> Início
+                </a>
+            </li>
+            <li>
+                <a href="./servicos.html">
+                    <ion-icon name="briefcase-outline"></ion-icon> Serviços
+                </a>
+            </li>
+            <li>
+                <a href="./Sojob.html">
+                    <ion-icon name="information-circle-outline"></ion-icon> Sojob
+                </a>
+            </li>
+            <li>
+                <a href="./Perfil.html">
+                    <ion-icon name="person-circle-outline"></ion-icon> Perfil
+                </a>
+            </li>
+            <li>
+                <a href="./registo.html">
+                    <ion-icon name="person-add-outline"></ion-icon> Registo
+                </a>
+            </li>
+            <li>
+                <a href="./login.html">
+                    <ion-icon name="log-in-outline"></ion-icon> Entrar
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+    <section class="boas-vindas">
+        <h1>Bem-vindo ao SOJOB!</h1>
+        <p>
+            Encontra profissionais, divulga o teu trabalho
+            e conecta-te a novas oportunidades.
+        </p>
+        <a href="./servicos.html" class="botao-principal">
+            <ion-icon name="search-outline"></ion-icon>
+            Encontrar serviços
+        </a>
+    </section>
+
+    <section aria-labelledby="titulo-atalhos">
+        <h2 class="titulo-secao" id="titulo-atalhos">
+            Explorar SOJOB
+        </h2>
+
+        <div class="atalhos">
+            <a class="atalho" href="./servicos.html">
+                <ion-icon name="construct-outline"></ion-icon>
+                <span>Procurar profissionais</span>
+            </a>
+
+            <a class="atalho" href="./Perfil.html">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>O meu perfil</span>
+            </a>
+
+            <a class="atalho" href="./login.html">
+                <ion-icon name="log-in-outline"></ion-icon>
+                <span>Entrar</span>
+            </a>
+
+            <a class="atalho" href="./registo.html">
+                <ion-icon name="person-add-outline"></ion-icon>
+                <span>Criar conta</span>
+            </a>
+
+            <a class="atalho" href="./servicos.html">
+                <ion-icon name="briefcase-outline"></ion-icon>
+                <span>Pedir um serviço</span>
+            </a>
+
+            <a class="atalho" href="./Sojob.html">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>Sobre o SOJOB</span>
+            </a>
+        </div>
+    </section>
+
+    <section aria-labelledby="titulo-feed">
+        <h2 class="titulo-secao" id="titulo-feed">
+            Publicações e oportunidades
+        </h2>
+
+        <div id="feed">
+
+            <article class="publicacao" data-search="pedreiro construção obras">
+                <h3>Construção e obras</h3>
+                <p>
+                    Precisas de um pedreiro ou profissional de construção?
+                    Explora os serviços disponíveis no SOJOB.
+                </p>
+                <a class="botao-principal" href="./servicos.html">
+                    Ver serviços
+                </a>
+            </article>
+
+            <article class="publicacao" data-search="mecânico carros automóveis reparação">
+                <h3>Mecânica e reparações</h3>
+                <p>
+                    Encontra profissionais para manutenção e reparação
+                    de veículos e outros equipamentos.
+                </p>
+                <a class="botao-principal" href="./servicos.html">
+                    Procurar mecânico
+                </a>
+            </article>
+
+            <article class="publicacao" data-search="artistas música cantores eventos">
+                <h3>Artistas e talentos</h3>
+                <p>
+                    Cantores, músicos e outros artistas podem divulgar
+                    o seu trabalho e encontrar novas oportunidades.
+                </p>
+                <a class="botao-principal" href="./servicos.html">
+                    Explorar talentos
+                </a>
+            </article>
+
+        </div>
+
+        <p id="sem-resultados" class="mensagem-vazia" hidden>
+            Não foram encontrados resultados. Experimenta outra pesquisa.
+        </p>
+    </section>
+
+</main>
+
+<nav id="barra-app" aria-label="Navegação inferior">
+
+    <a href="./index.html" class="item-app ativo">
+        <ion-icon name="home-outline"></ion-icon>
+        <span>Início</span>
+    </a>
+
+    <button type="button" class="item-app" id="btn-camera">
+        <ion-icon name="camera-outline"></ion-icon>
+        <span>Câmara</span>
+    </button>
+
+    <input type="file" id="input-camera"
+           accept="image/*,video/*"
+           capture="environment" hidden>
+
+    <button type="button" class="item-app btn-mais" id="btn-mais"
+            aria-label="Abrir ações" aria-expanded="false">
+        <ion-icon name="add-circle"></ion-icon>
+        <span>Publicar</span>
+    </button>
+
+    <a href="./Perfil.html" class="item-app">
+        <ion-icon name="person-outline"></ion-icon>
+        <span>Perfil</span>
+    </a>
+
+    <button type="button" class="item-app" id="btn-topo">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+        <span>Topo</span>
+    </button>
+
+</nav>
+
+<div id="menu-acoes">
+    <a href="./servicos.html">
+        <ion-icon name="briefcase-outline"></ion-icon>
+        Pedir serviço
+    </a>
+
+    <a href="#" id="acao-camera">
+        <ion-icon name="camera-outline"></ion-icon>
+        Publicar foto ou vídeo
+    </a>
+
+    <a href="./login.html">
+        <ion-icon name="log-in-outline"></ion-icon>
+        Entrar
+    </a>
+
+    <a href="./registo.html">
+        <ion-icon name="person-add-outline"></ion-icon>
+        Criar conta
+    </a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botaoMenu = document.getElementById("botao-menu");
+    const menuPrincipal = document.getElementById("menu-principal");
+    const botaoMais = document.getElementById("btn-mais");
+    const menuAcoes = document.getElementById("menu-acoes");
+    const botaoCamera = document.getElementById("btn-camera");
+    const acaoCamera = document.getElementById("acao-camera");
+    const inputCamera = document.getElementById("input-camera");
+    const botaoTopo = document.getElementById("btn-topo");
+    const pesquisa = document.getElementById("campo-pesquisa");
+    const feed = document.getElementById("feed");
+    const semResultados = document.getElementById("sem-resultados");
+
+    // MENU PRINCIPAL
+    botaoMenu.addEventListener("click", function () {
+        const aberto = menuPrincipal.classList.toggle("aberto");
+        botaoMenu.setAttribute("aria-expanded", aberto);
+    });
+
+    // FECHAR MENU DEPOIS DE ESCOLHER UMA PÁGINA
+    menuPrincipal.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            menuPrincipal.classList.remove("aberto");
+            botaoMenu.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    // MENU DO BOTÃO PUBLICAR
+    botaoMais.addEventListener("click", function () {
+        const aberto = menuAcoes.classList.toggle("aberto");
+        botaoMais.setAttribute("aria-expanded", aberto);
+    });
+
+    // CÂMARA E SELEÇÃO DE FICHEIRO
+    function abrirCamera() {
+        inputCamera.click();
+    }
+
+    botaoCamera.addEventListener("click", abrirCamera);
+
+    acaoCamera.addEventListener("click", function (event) {
+        event.preventDefault();
+        menuAcoes.classList.remove("aberto");
+        botaoMais.setAttribute("aria-expanded", "false");
+        abrirCamera();
+    });
+
+    // CRIAR PRÉ-VISUALIZAÇÃO LOCAL DE FOTO OU VÍDEO
+    inputCamera.addEventListener("change", function () {
+        const ficheiro = inputCamera.files[0];
+
+        if (!ficheiro) return;
+
+        if (!ficheiro.type.startsWith("image/") &&
+            !ficheiro.type.startsWith("video/")) {
+            alert("Escolhe uma imagem ou um vídeo válido.");
+            inputCamera.value = "";
+            return;
+        }
+
+        const url = URL.createObjectURL(ficheiro);
+        const publicacao = document.createElement("article");
+        publicacao.className = "publicacao";
+        publicacao.dataset.search = ficheiro.name.toLowerCase();
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = "Pré-visualização da tua publicação";
+
+        const descricao = document.createElement("p");
+        descricao.textContent =
+            "Este conteúdo está disponível apenas nesta página e neste dispositivo.";
+
+        publicacao.appendChild(titulo);
+        publicacao.appendChild(descricao);
+
+        let media;
+
+        if (ficheiro.type.startsWith("video/")) {
+            media = document.createElement("video");
+            media.controls = true;
+            media.playsInline = true;
+        } else {
+            media = document.createElement("img");
+            media.alt = "Pré-visualização da fotografia";
+        }
+
+        media.src = url;
+        publicacao.appendChild(media);
+
+        feed.prepend(publicacao);
+        publicacao.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        inputCamera.value = "";
+    });
+
+    // PESQUISA NO CONTEÚDO VISÍVEL
+    pesquisa.addEventListener("input", function () {
+        const termo = pesquisa.value.trim().toLocaleLowerCase("pt");
+        const publicacoes = feed.querySelectorAll(".publicacao");
+        let encontradas = 0;
+
+        publicacoes.forEach(function (publicacao) {
+            const texto = (
+                publicacao.innerText + " " +
+                (publicacao.dataset.search || "")
+            ).toLocaleLowerCase("pt");
+
+            const corresponde = texto.includes(termo);
+            publicacao.hidden = !corresponde;
+
+            if (corresponde) encontradas++;
+        });
+
+        semResultados.hidden = encontradas > 0;
+    });
+
+    // VOLTAR AO TOPO
+    botaoTopo.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // FECHAR MENU AO TOCAR FORA
+    document.addEventListener("click", function (event) {
+        if (!menuAcoes.contains(event.target) &&
+            !botaoMais.contains(event.target)) {
+            menuAcoes.classList.remove("aberto");
+            botaoMais.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    // FECHAR MENU COM ESC
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            menuPrincipal.classList.remove("aberto");
+            menuAcoes.classList.remove("aberto");
+            botaoMenu.setAttribute("aria-expanded", "false");
+            botaoMais.setAttribute("aria-expanded", "false");
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

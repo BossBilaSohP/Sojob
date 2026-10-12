@@ -1,0 +1,188 @@
+/* =========================================================
+   CSS DA PÁGINA servicos.html
+   Requer o tema.css carregado antes (cores da marca)
+   ========================================================= */
+
+/* ---------- TÍTULO DA PÁGINA ---------- */
+#cabecalho-servicos {
+    text-align: center;
+    padding: 32px 16px 16px;
+}
+/
+#cabecalho-servicos h1 {
+    font-size: 26px;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 6px;
+}
+#cabecalho-servicos h1 ion-icon {
+    color: var(--cor-principal);
+    font-size: 28px;
+}
+#cabecalho-servicos p {
+    color: var(--cor-texto-suave);
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ---------- GRADE DE SERVIÇOS ---------- */
+#lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-servico {
+    background: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 24px 18px;
+    text-align: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-servico:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-alta);
+}
+
+.icone-servico {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--rosa-claro);
+    color: var(--rosa);
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-servico h2 { font-size: 18px; margin: 0 0 8px; color: var(--cor-texto); }
+.card-servico p {
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+    margin: 0 0 16px;
+    min-height: 42px;
+}
+
+.btn-pedir {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--cor-principal);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background .2s ease;
+}
+.btn-pedir:hover { background: var(--cor-principal-escura); }
+
+/* ---------- FORMULÁRIO DE PEDIDO ---------- */
+#pedido {
+    max-width: 560px;
+    margin: 24px auto 48px;
+    padding: 24px 16px;
+    background: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+#pedido h2 {
+    font-size: 20px;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px;
+}
+#pedido h2 ion-icon { color: var(--cor-principal); font-size: 22px; }
+
+#form-pedido .campo {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+#form-pedido label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin-bottom: 6px;
+}
+#form-pedido input,
+#form-pedido select,
+#form-pedido textarea {
+    padding: 11px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--cor-texto);
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+#form-pedido input:focus,
+#form-pedido select:focus,
+#form-pedido textarea:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, .15);
+}
+#form-pedido textarea { resize: vertical; min-height: 90px; }
+
+.btn-enviar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background: var(--cor-principal);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+.btn-enviar:hover { background: var(--cor-principal-escura); }
+
+/* Mensagens de sucesso / erro criadas pelo servicos.js */
+#mensagem-form {
+    display: none;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+#mensagem-form.sucesso {
+    background: #e6f9ee;
+    color: var(--verde);
+    border: 1px solid var(--verde-claro);
+}
+#mensagem-form.erro {
+    background: #fdeaea;
+    color: var(--vermelho-escuro);
+    border: 1px solid #f5c2c0;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 480px) {
+    #cabecalho-servicos h1 { font-size: 22px; }
+    #lista-servicos { grid-template-columns: 1fr; padding: 12px; }
+    .card-servico p { min-height: 0; }
+    #pedido { margin: 16px 12px 40px; padding: 20px 14px; }
+}

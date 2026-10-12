@@ -1,0 +1,737 @@
+
+/* ============================================================
+   SOJOB SERVIÇOS — CSS PRINCIPAL
+   ============================================================ */
+
+/* 1. RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. VARIÁVEIS GLOBAIS */
+:root {
+    --cor-azul: #f6e44c;
+    --cor-azul-escuro: #0056B3;
+    --cor-amarelo: #FF0;
+    --cor-branco: #FFFFFF;
+    --cor-texto: #0c38fa;
+    --cor-texto-suave: #e14848;
+    --cor-borda: #a92222;
+    --fundo-app: #f92b2b;
+    --raio: 12px;
+}
+
+/* 3. FUNDO E BASE */
+html {
+scroll-behavior: smooth;
+}
+
+
+
+
+/* ===== BARRA SUPERIOR SOJOB ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: rgba(13, 26, 230, 0.9019607843137255);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    padding: 5px 15px;
+    min-height: 45px;
+
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+font-family: Arial, sans-serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+color: #ED1;
+
+/* Vermelho em cima e amarelo em baixo */
+background: linear-gradient(
+    to b #FFF 26%,
+    #FFF 50%,
+    #FFF 100%
+);
+
+background-attachment: fixed;
+padding-bottom: 80px;
+
+}
+
+/* 4. CABEÇALHO E NAVEGAÇÃO */
+ 
+#nav-esq {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+#logo img {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+}
+
+/* 5. MENU PRINCIPAL */
+#menu-principal {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+}
+
+#menu-principal a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #CCCCCC;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s, color 0.2s;
+}
+
+#menu-principal a.ativo {
+    color: var(--cor-branco);
+    background: var(--cor-azul);
+}
+
+#menu-principal a:hover {
+    color: var(--cor-branco);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+#menu-principal ion-icon {
+    font-size: 20px;
+}
+
+#icone-menu {
+    display: none;
+    margin-left: auto;
+    list-style: none;
+    font-size: 30px;
+    color: var(--cor-branco);
+    cursor: pointer;
+}
+
+/* 6. BARRA DE PESQUISA */
+#caixa-pesquisa {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+    padding: 6px 14px;
+}
+
+#icone-pesquisa {
+    color: #AAAAAA;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+#campo-pesquisa {
+    width: 140px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--cor-branco);
+    font-size: 14px;
+}
+
+#campo-pesquisa::placeholder {
+    color: #BBBBBB;
+}
+
+#resultados-pesquisa {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 220px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--cor-branco);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    z-index: 500;
+}
+
+#resultados-pesquisa.ativo {
+    display: block;
+}
+
+#resultados-pesquisa li a {
+    display: block;
+    padding: 11px 15px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#resultados-pesquisa li a:hover {
+    background: #F0F4F8;
+}
+
+/* 7. CONTEÚDO PRINCIPAL */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* 8. RODAPÉ */
+#rodape {
+    background: #FF8C00;
+    border-top: 3px solid #FFD700;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.rodape-conteudo p {
+    color: #333333;
+    font-size: 14px;
+}
+
+/* 9. BARRA INFERIOR DO APLICATIVO */
+#barra-app {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(30, 34, 45, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 5px calc(8px + env(safe-area-inset-bottom));
+    z-index: 300;
+}
+
+.item-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #AAAAAA;
+    font: 11px Arial, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item-app ion-icon {
+    font-size: 24px;
+}
+
+.item-app:hover,
+.item-app.ativo {
+    color: var(--cor-azul);
+}
+
+.btn-mais ion-icon {
+    font-size: 20px;
+    color: var(--cor-azul);
+    margin-top: -20px;
+    background: var(--fundo-app);
+    border: 4px solid var(--fundo-app);
+    border-radius: 40%;
+}
+
+/* 10. MENU DE AÇÕES */
+#menu-acoes {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background: var(--cor-branco);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 400;
+}
+
+#menu-acoes.ativo {
+    display: block;
+}
+
+#menu-acoes a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#menu-acoes a:hover {
+    background: #F0F4F8;
+}
+
+#menu-acoes ion-icon {
+    font-size: 20px;
+    color: var(--cor-azul);
+}
+
+#fundo-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 350;
+}
+
+#fundo-menu.ativo {
+    display: block;
+}
+
+/* 11. FEED E PUBLICAÇÕES */
+#feed {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background: var(--cor-branco);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.post-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--cor-azul);
+    color: var(--cor-branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.post-autor {
+    color: var(--cor-texto);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.post-data {
+    color: var(--cor-texto-suave);
+    font-size: 12px;
+}
+
+.post-midia img,
+.post-midia video {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    background: #000000;
+}
+
+.post-texto {
+    color: var(--cor-texto);
+    font-size: 14px;
+    padding: 12px 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* 12. REAÇÕES */
+.post-acoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 8px 10px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.acao {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.acao ion-icon {
+    font-size: 20px;
+}
+
+.acao:hover {
+    background: #F0F4F8;
+}
+
+.acao.gosto.ativo {
+    color: var(--cor-azul);
+}
+
+.acao.amrgbativo {
+    color: #E0245E;
+}
+
+.acao.naogosto.ativo {
+    color: var(--cor-texto);
+    background: #E8E8E8;
+}
+
+.acao-comentarios {
+    margin-left: auto;
+}
+
+/* 13. COMENTÁRIOS */
+.post-comentarios {
+    display: none;
+    padding: 12px 15px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.post-comentarios.aberto {
+    display: block;
+}
+
+.comentario {
+    color: var(--cor-texto);
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px solid #F0F0F0;
+    overflow-wrap: anywhere;
+}
+
+.comentario strong {
+    color: var(--cor-azul);
+    margin-right: 6px;
+}
+
+.form-comentario {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.form-comentario input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 14px;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-comentario input:focus {
+    border-color: var(--cor-azul);
+}
+
+.form-comentario button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: var(--cor-azul);
+    color: var(--cor-branco);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.feed-vazio {
+    text-align: center;
+    color: #888888;
+    padding: 50px 20px;
+    font-size: 15px;
+}
+
+/* 14. PERFIL PROFISSIONAL */
+#perfil-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 16px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+#perfil-foto {
+    position: relative;
+    flex-shrink: 0;
+}
+
+#perfil-foto img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--cor-borda);
+}
+
+.verificado {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--cor-branco);
+    border-radius: 50%;
+    background: #0095F6;
+    color: var(--cor-branco);
+}
+
+.verificado ion-icon {
+    font-size: 16px;
+}
+
+#perfil-info {
+    flex: 1;
+    min-width: 220px;
+}
+
+#perfil-nome-linha {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#perfil-nome-linha h1 {
+    font-size: 20px;
+}
+
+.badge-verificacao {
+    display: flex;
+    align-items: center;
+    color: #0900f6;
+    font-size: 20px;
+}
+
+#perfil-profissao {
+    color: #555555;
+    margin: 4px 0 8px;
+    font-size: 15px;
+}
+
+#perfil-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 8px 0;
+}
+
+#perfil-stats div {
+    text-align: center;
+}
+
+#perfil-stats strong {
+    display: block;
+    font-size: 17px;
+}
+
+#perfil-stats span {
+    color: #777777;
+    font-size: 13px;
+}
+
+#perfil-avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #F5A623;
+    font-size: 16px;
+}
+
+#perfil-avaliacao span {
+    color: #555555;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+#perfil-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+#perfil-acoes button,
+#perfil-acoes a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #EFEFEF;
+    color: #222222;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#perfil-acoes .btn-principal {
+    background: #3215af;
+    color: var(--cor-branco);
+}
+
+/* 15. DESTAQUES DO PERFIL */
+#perfil-meritos {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.merito {
+    flex-shrink: 0;
+    width: 76px;
+    text-align: center;
+}
+
+.merito-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 6px;
+    border: 2px solid #F5A623;
+    border-radius: 50%;
+    background: #FFF8EC;
+    color: #F5A623;
+    font-size: 26px;
+}
+
+.merito span {
+    color: #444444;
+    font-size: 12px;
+}
+
+/* 16. PORTFÓLIO DO PERFIL */
+#perfil-portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    padding: 4px;
+}
+
+.portfolio-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #F0F0F0;
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: rgba(0, 0, 0, 0.45);
+    color: var(--cor-branco);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay ion-icon {
+    vertical-align: -2px;
+    margin-right: 4px;
+}
+
+/* 17. RESPONSIVIDADE DO PERFIL */
+@media (max-width: 480px) {
+    #perfil-header {
+        gap: 16px;
+    }
+
+    #perfil-foto img {
+        width: 84px;
+        height: 84px;
+    }
+
+    #perfil-stats {
+        gap: 16px;
+    }
+}
+
+
+
+/* resgito*/
+
+
+
+
+
+

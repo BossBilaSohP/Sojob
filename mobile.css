@@ -1,0 +1,76 @@
+@media (max-width: 768px) {
+
+    /* mostra o hambúrguer */
+    #icone-menu {
+        display: block;
+    }
+
+    /* menu vira painel deslizante, tipo app */
+    #menu-principal {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: rgba(30, 34, 45, 0.98);
+        padding: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    #menu-principal.aberto {
+        display: flex;
+    }
+
+    #menu-principal a {
+        padding: 14px 16px;
+    }
+}
+
+
+/* SOJOB — MENU E LAYOUT MOBILE */
+@media (max-width: 768px) {
+    #nav-esq {
+        flex-wrap: wrap;
+    }
+
+    #icone-menu {
+        display: block;
+    }
+
+    #menu-principal {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #menu-principal.aberto {
+        display: flex;
+    }
+
+    #caixa-pesquisa {
+        width: 100%;
+    }
+
+    #campo-pesquisa {
+        width: 100%;
+        min-width: 0;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    #feed {
+        width: 100%;
+    }
+
+    #lista-servicos {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    #pedido {
+        margin: 16px 0 40px;
+    }
+}
